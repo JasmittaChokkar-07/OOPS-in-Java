@@ -1,0 +1,67 @@
+import java.util.Scanner;
+class EBBill
+{
+public static void main(String[] args)
+{
+Scanner sc = new Scanner(System.in);
+int cno,prev,curr,units;
+String name,type;
+double bill=0;
+
+System.out.println("Enter Consumer Number:");
+cno=sc.nextInt();
+sc.nextLine();
+
+System.out.println("Enter Consumer Name:");
+name=sc.nextLine();
+
+System.out.println("Enter Previous Reading:");
+prev=sc.nextInt();
+
+System.out.println("Enter Current Reading:");
+curr=sc.nextInt();
+sc.nextLine();
+
+System.out.println("Enter Connection Type (D/C):");
+type=sc.nextLine();
+
+units=curr-prev;
+
+if(type.equalsIgnoreCase("D"))
+{
+if(units<=100)
+bill=0;
+
+else if(units<=200)
+bill=(units-100)*2;
+
+else if(units<=500)
+bill=100*2 + (units-200)*4;
+
+else
+bill=100*2+300*4+(units-500)*6;
+}
+
+else
+{
+if(units<=100)
+bill=units*2;
+
+else if(units<=200)
+bill=units*2 + (units-100)*4;
+
+else if(units<=500)
+bill=100*2 + 100*4+(units-200)*6;
+
+else
+bill=100*2+100*4+300*6+(units-500)*7;
+}
+
+System.out.println("\nConsumer No:" +cno);
+System.out.println("Name:" + name);
+System.out.println("Units:" + units);
+System.out.println("Bill Amount:Rs." + bill);
+
+sc.close();
+}
+}
