@@ -1,3 +1,40 @@
+import java.util.ArrayList; 
+import java.util.Scanner; 
+public class TravelManagement { 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+        ArrayList<String> cities = new ArrayList<>(); 
+        int choice; 
+        do { 
+            System.out.println("\n===== Travel Management System ====="); 
+            System.out.println("1. Append a City"); 
+            System.out.println("2. Insert a City at Specific Position"); 
+            System.out.println("3. Search for a City"); 
+            System.out.println("4. Display Cities Starting with a Letter"); 
+            System.out.println("5. Display All Cities"); 
+            System.out.println("6. Exit"); 
+            System.out.print("Enter your choice: "); 
+            choice = sc.nextInt(); 
+            sc.nextLine(); // Consume newline 
+            switch (choice)  
+{ 
+                case 1: 
+                    System.out.print("Enter city name: "); 
+                    String city = sc.nextLine(); 
+                    cities.add(city); 
+                    System.out.println(city + " added successfully."); 
+                    break; 
+                case 2: 
+                    System.out.print("Enter index: "); 
+                    int index = sc.nextInt(); 
+                    sc.nextLine(); 
+                    if (index >= 0 && index <= cities.size()) { 
+                        System.out.print("Enter city name: "); 
+                        String newCity = sc.nextLine(); 
+                        cities.add(index, newCity); 
+                        System.out.println("City inserted successfully."); 
+                    } else { 
+                        System.out.println("Invalid index."); 
                     } 
                     break; 
  
