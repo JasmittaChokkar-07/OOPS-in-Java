@@ -80,5 +80,5 @@ public class TravelManagement {
             } 
         } while (choice != 6); 
         sc.close(); 
-    } 
+    }
 } 
