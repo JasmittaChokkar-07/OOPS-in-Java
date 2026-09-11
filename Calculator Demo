@@ -1,0 +1,36 @@
+interface Calculator {
+void add(double a,double b);
+void subract(double a,double b);
+void multiply(double a,double b);
+}
+
+class SimpleCalculator implements Calculator {
+
+public void add (double a,double b) {
+System.out.println("Addition =" + (a+b));
+}
+
+public void subract (double a,double b) {
+System.out.println("Subraction =" + (a-b));
+}
+
+public void multiply (double a,double b) {
+System.out.println("Multtiplication =" + (a*b));
+}
+
+public void divide (double a,double b) {
+if(b!=0)
+System.out.println("Division =" + (a/b));
+else
+System.out.println("Cannot Divide");
+}}
+
+public class CalculatorDemo {
+public static void main(String[] args) {
+SimpleCalculator calc = new SimpleCalculator();
+calc.add(20,10);
+calc.subract(20,10);
+calc.multiply(20,10);
+calc.divide(20,10);
+}}
+ 
